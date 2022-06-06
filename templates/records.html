@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Records</title>
+  <link rel="stylesheet" href="../static/posts.css">
+</head>
+<body>
+    <a class="button" href="My_Dashboard.html">
+    <div class="back">Go Back</div>
+	</a>
+
+    <div class="cont">
+    <div class="col-md-10">
+        <div class="profile-display">
+            <div class="profile-cover"></div>
+            <div class="author-info">
+		        <div class="newtrition.png"> <img src="../static/newtrition.png" alt=" " width="200" height="200">
+		        </div>
+		        <div class="author-meta">
+			        <h2 class="author-username">
+                        {{user}}'s Records
+			        </h2>
+		        </div>
+	        </div>
+        </div>
+    </div>
+</div>
+
+<style type="text/css">
+.tg  {border-collapse:collapse;border-color:#f2d64b;border-spacing:10;margin:10px auto;}
+.tg td{background-color:#f2e18d;border-color:#f2d64b;border-style:solid;border-width:1px;color:#444;
+  font-family:Arial, sans-serif;font-size:14px;overflow:hidden;padding:10px 5px;word-break:normal;}
+.tg th{background-color:#f2d64b;border-color:#f2d64b;border-style:solid;border-width:1px;color:#fff;
+  font-family:Arial, sans-serif;font-size:14px;font-weight:normal;overflow:hidden;padding:10px 5px;word-break:normal;}
+.tg .tg-hmp3{background-color:#f2ebc9;text-align:left;vertical-align:top}
+.tg .tg-0lax{text-align:left;vertical-align:top}</style>
+<div class="tg-wrap"><table class="tg" style="height:100%;width:100%; top: 0; bottom: 0; left: 0; right: 0;border:px solid">
+<thead>
+  <tr>
+    <th class="tg-0lax"></th>
+
+    <th class="tg-0lax">Select a Day
+        <select id="operators">
+          <option>Monday</option>
+          <option>Tuesday</option>
+          <option>Wednesday</option>
+          <option>Thursday</option>
+          <option>Friday</option>
+          <option>Saturday</option>
+          <option>Sunday</option>
+        </select>
+    </th>
+  </tr>
+</thead>
+<tbody>
+  <tr>
+    <td class="tg-0lax">Breakfast</td>
+    <td class="tg-hmp3">
+    <input type="text" id="txt_b" onkeyup='saveValue(this);' />
+</td>
+  </tr>
+  <tr>
+    <td class="tg-0lax">Lunch</td>
+    <td class="tg-hmp3">
+      <input type="text" id="txt_l" onkeyup='saveValue(this);' />
+</td>
+  </tr>
+  <tr>
+    <td class="tg-0lax">Dinner</td>
+    <td class="tg-hmp3">
+      <input type="text" id="txt_d" onkeyup='saveValue(this);' />
+</td>
+  </tr>
+  <tr>
+    <td class="tg-0lax">Snack</td>
+    <td class="tg-hmp3">
+      <input type="text" id="txt_s" onkeyup='saveValue(this);' />
+</td>
+  </tr>
+  <tr>
+    <td class="tg-0lax">Water</td>
+    <td class="tg-hmp3">
+      <input type="text" id="txt_w" onkeyup='saveValue(this);' />
+</td>
+  </tr>
+  <tr>
+    <td class="tg-0lax">Exercise</td>
+    <td class="tg-hmp3">
+      <input type="text" id="txt_e" onkeyup='saveValue(this);' />
+</td>
+  </tr>
+  <tr>
+    <td class="tg-0lax">Total</td>
+    <td class="tg-hmp3">
+      <input type="text" id="txt_ttl" onkeyup='saveValue(this);' />
+</td>
+  </tr>
+</tbody>
+</table>
+
+  <script type="text/javascript">
+        document.getElementById("txt_b").value = getSavedValue("txt_b");   // set the value to this input
+        document.getElementById("txt_l").value = getSavedValue("txt_l");   // set the value to this input
+        document.getElementById("txt_d").value = getSavedValue("txt_d");   // set the value to this input
+        document.getElementById("txt_s").value = getSavedValue("txt_s");   // set the value to this input
+        document.getElementById("txt_w").value = getSavedValue("txt_w");   // set the value to this input
+        document.getElementById("txt_e").value = getSavedValue("txt_e");   // set the value to this input
+        document.getElementById("txt_ttl").value = getSavedValue("txt_ttl");   // set the value to this input
+
+        //Save the value function - save it to localStorage as (ID, VALUE)
+        function saveValue(e){
+            var id = e.id;  // get the sender's id to save it .
+            var val = e.value; // get the value.
+            localStorage.setItem(id, val);// Every time user writing something, the localStorage's value will override .
+        }
+
+        //get the saved value function - return the value of "v" from localStorage.
+        function getSavedValue  (v){
+            if (!localStorage.getItem(v)) {
+                return "";
+            }
+            return localStorage.getItem(v);
+        }
+</script>
+
+</div>
+
+<button type="submit" class="btn btn-primary">Save Change</button>
+
+</body>
+</html>

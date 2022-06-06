@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>NewTrition Login</title>
+  <link rel="stylesheet" href="style.css">
+  <script defer src="login.js"></script>
+</head>
+
+<body>
+  <main id="main-holder">
+    <img width="320" height="240" src="NewTrition.png" alt="Logo">
+
+    <div id="login-error-msg-holder">
+      <p id="login-error-msg">Invalid username <span id="error-msg-second-line">and/or password</span></p>
+    </div>
+
+    <form action="{{ url_for('login') }}" method="post">
+      <div class="msg">{{ msg }}</div>
+        <input id="username" name="username" type="text" placeholder="Enter Your Username" class="textbox"/></br></br>
+        <input id="password" name="password" type="password" placeholder="Enter Your Password" class="textbox"/></br></br></br>
+        <input type="submit" class="btn" value="Sign In"></br></br>
+    </form>
+
+<p class="bottom">Dont't have an account?  <a class="bottom" href="{{url_for('register')}}"> Sign Up here</a></p>
+
+
+  </main>
+</body>
+
+</html>

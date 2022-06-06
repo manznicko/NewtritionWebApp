@@ -1,0 +1,24 @@
+<!--
+    CSE 106 - Final Project
+    App Idea: NewTrition
+ -->
+<html>
+<head>
+    <title>NewTrition</title>
+    <link rel="stylesheet" href="../static/index.css">
+    <script src="../static/index.js" defer></script>
+</head>
+<body>
+<!-- Insert Body -->
+<div align="center">
+    <div align="center" class="border">
+       <div class="header">
+          <h1 class="word">Index</h1>
+       </div></br></br></br>
+          <h1 class="bottom">
+               Hi {{user}}!!</br></br> Welcome to the index page...                 
+          </h1></br></br></br>
+          <a href="{{ url_for('logout') }}" class="btn">Logout</a>
+    </div>
+  </div>
+</body>

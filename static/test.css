@@ -1,0 +1,22 @@
+body {
+    background-color: #F2E18D!important;
+  }
+  
+  .w3-bar {
+        background-color: #AED3F2;
+  }
+  .w3-padding-16{
+        background-color: #F2D64B;
+        color: white;
+  }
+  
+  
+  #close-menu {
+    background-color: #AED3F2!important;
+        color:black;
+  }
+  
+  #close-menu:hover {
+    background-color: #1F2F8C!important;
+        color:white!important;
+  }
